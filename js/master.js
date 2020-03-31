@@ -3,27 +3,35 @@
 // stampa la lista ordinata alfabeticamente
 // scrivi anche la posizione della lista in cui  il nuovo utente si trova
 
-var userSurname = prompt('Insert your surname');
+var userSurname = '';
 var listSurname = ['Bianchi', 'Rossi', 'Duzioni', 'Balsano', 'Verdi'];
+var userSurname = document.getElementById('addSurname');
+var btnAdd = document.getElementById('add');
 
 var list = document.getElementById('ulList');
 
-listSurname.push(userSurname);
-console.log(listSurname);
+btnAdd.addEventListener('click',
+  function() {
+    listSurname.push(userSurname.value);
+    console.log(listSurname);
 
-for (var i = 0; i < listSurname.length; i++) {
-    var surname = listSurname[i];
+    var a = listSurname.indexOf(userSurname.value);
+    console.log(a);
+    document.getElementById("position").innerHTML = 'Posizione: ' + a;
 
-    var lastSurname = list.innerHTML;
+    // Aggiunta cognome alla lista e creazione lista
+    for (var i = 0; i < listSurname.length; i++) {
+        var surname = listSurname[i];
 
-    var newlistSurname = '<li>' + surname + '</li>';
-    list.innerHTML = lastSurname + newlistSurname;
+        var lastSurname = list.innerHTML;
 
-}
+        var newlistSurname = '<li>' + surname + '</li>';
+        list.innerHTML = lastSurname + newlistSurname;
+    }
 
-var a = listSurname.indexOf(userSurname);
-console.log(a);
-document.getElementById("position").innerHTML = 'Posizione: ' + a;
+    // Ordine alfabetico
+    listSurname.sort();
+    document.getElementById("sortList").innerHTML = listSurname;
 
-listSurname.sort();
-document.getElementById("sortList").innerHTML = listSurname + '';
+  }
+)

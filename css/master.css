@@ -29,6 +29,22 @@ body {
   color: lightgreen;
 }
 
+.btn {
+  border-radius: 5px;
+  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0px solid transparent;
+  margin: 10px;
+}
+
+.input {
+  border-radius: 5px;
+  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0px solid transparent;
+  margin: 10px;
+}
+
 /* CONTENT */
 .wrapper {
   display: flex;
