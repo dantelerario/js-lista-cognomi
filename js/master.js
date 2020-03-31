@@ -20,3 +20,7 @@ for (var i = 0; i < listSurname.length; i++) {
     list.innerHTML = lastSurname + newlistSurname;
 
 }
+
+var a = listSurname.indexOf(userSurname);
+console.log(a);
+document.getElementById("position").innerHTML = a;
