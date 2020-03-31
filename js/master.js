@@ -23,4 +23,7 @@ for (var i = 0; i < listSurname.length; i++) {
 
 var a = listSurname.indexOf(userSurname);
 console.log(a);
-document.getElementById("position").innerHTML = a;
+document.getElementById("position").innerHTML = 'Posizione: ' + a;
+
+listSurname.sort();
+document.getElementById("sortList").innerHTML = listSurname + '';
